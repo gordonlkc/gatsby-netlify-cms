@@ -12,6 +12,7 @@ collections:
     label: "Articles"
     description: "Article content, dates and author information."
     folder: "src/pages/articles"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}-{{slug}}"
     create: true
     fields:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
@@ -25,7 +26,7 @@ collections:
     name: 'categories'
     folder: "src/pages/categories" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}-{{slug}}"
     identifier_field: title
     fields:
       - {label: Title, name: title, widget: string}
@@ -34,7 +35,7 @@ collections:
     name: 'staffs'
     folder: "src/pages/staffs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}-{{slug}}"
     identifier_field: lastName
     fields:
       - { label: Last name, name: lastName, required: true, widget: string }
