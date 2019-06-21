@@ -33,7 +33,7 @@ ArticleTemplate.propTypes = {
   article: PropTypes.shape({
     title: PropTypes.string,
     name: PropTypes.string,
-    author: PropTypes.object,
+    author: PropTypes.string,
   }),
 };
 
