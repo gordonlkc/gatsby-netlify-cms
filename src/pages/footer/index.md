@@ -5,7 +5,7 @@ logoImage:
   imageAlt: JavaScript Wakanda
   tagline: Your friendly local Wakanda article
 socialLinks:
-  - image: /img/article.svg
+  - image: /img/logo.svg
     imageAlt: Join us on article.com
     label: article.com
     linkURL: 'https://www.article.com/'

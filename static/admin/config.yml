@@ -10,7 +10,7 @@ display_url: https://cocky-varahamihira-ca0a52.netlify.com/
 collections:
   - name: "articles"
     label: "Articles"
-    description: "Article dates, location, and presenter information."
+    description: "Article content, dates and author information."
     folder: "src/pages/articles"
     create: true
     fields:
@@ -18,53 +18,26 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - {
-          label: Presenters,
-          name: presenters,
-          required: true,
-          widget: list,
-          fields:
-            [
-              { label: Name, name: name, required: true, widget: string },
-              {
-                label: Presentation Title,
-                name: presentationTitle,
-                required: false,
-                widget: string,
-              },
-              {
-                label: Image,
-                name: image,
-                required: false,
-                hint: "If an image isn't specified, a default headshot placeholder image will be used",
-                widget: image,
-              },
-              { label: Text, name: text, required: true, widget: text },
-              {
-                label: Links,
-                name: links,
-                required: false,
-                widget: list,
-                fields:
-                  [
-                    { label: Text, name: linkText, widget: string },
-                    { label: URL, name: linkURL, widget: string },
-                  ],
-              },
-            ],
-        }
-      - {
-          label: "Location",
-          name: "location",
+          label: Author,
+          name: author,
           required: true,
           widget: "object",
           fields:
             [
-              { label: "Name", name: "name", widget: "string" },
-              { label: "Google Maps Link", name: "mapsLink", widget: "string" },
-              { label: "Latitude", name: "mapsLatitude", widget: "number", valueType: "float" },
-              { label: "Longitude", name: "mapsLongitude", widget: "number", valueType: "float" },
+              { label: Name, name: name, required: true, widget: string },
             ],
         }
+      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["title"], valueField: "title", displayFields: ["title"], required: false}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: 'Categories'
+    name: 'categories'
+    folder: "src/pages/categories" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    format: 'json'
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Description, name: description, widget: string, required: false}
   - name: "pages"
     label: "Pages"
     files:
@@ -116,29 +89,6 @@ collections:
                   },
                 ],
             }
-          - {
-              label: "SEO & Meta",
-              name: "seo",
-              widget: "object",
-              fields:
-                [
-                  { label: "Browser Tab Title", name: "browserTitle", widget: "string"},
-                  { label: "Title", name: "title", widget: "string" },
-                  { label: "Description", name: "description", widget: "string" },
-                ],
-            }
-      - file: "src/pages/pastArticles/index.md"
-        label: "Past Articles"
-        name: "pastArticles"
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "past-articles-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
           - {
               label: "SEO & Meta",
               name: "seo",

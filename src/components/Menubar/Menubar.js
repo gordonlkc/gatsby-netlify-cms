@@ -14,12 +14,11 @@ export const MenubarTemplate = ({ data }) => (
   <Navbar.Collapse id="responsive-menubar-nav">
     <Nav className="mr-auto">
       {data.menuItems.map((menuItem) => {
-        console.log(menuItem);
         return (
           (menuItem.subItems && menuItem.subItems.length>0) ? 
           (<NavDropdown title={menuItem.label} id="collasible-nav-dropdown" key={menuItem.linkURL} href={menuItem.linkURL}>
             {menuItem.subItems.map((subItem) => {
-              return (<NavDropdown.Item href={subItem.linkURL}> {subItem.label} </NavDropdown.Item>);
+              return (<NavDropdown.Item key={subItem.linkURL} href={subItem.linkURL}> {subItem.label} </NavDropdown.Item>);
             })}
           </NavDropdown>) :
           (<Nav.Link key={menuItem.linkURL} href={menuItem.linkURL}>{menuItem.label}</Nav.Link>)
