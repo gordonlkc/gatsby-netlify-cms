@@ -1,9 +1,9 @@
 ---
 templateKey: home-page
 headerImage:
-  image: /img/television.png
-  imageAlt: JavaScript Wakanda
-title: Meet other JavaScript Developers in Wakanda
+  image: /img/annie-spratt-608001-unsplash.jpg
+  imageAlt: Legal company
+title: Dallow Legal
 latestArticleHeading: Latest Article
 noLatestArticleText: Details to be announced.
 mapsNote: Clicking the pin opens Google Maps in a new tab.
