@@ -3,8 +3,12 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 
 import "../styles";
-import { Navbar } from "../components/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Menubar } from "../components/Menubar";
 import { Footer } from "../components/Footer";
+
+
 
 const TemplateWrapper = ({ footerData = null, navbarData = null, children }) => (
   <div>
@@ -12,7 +16,7 @@ const TemplateWrapper = ({ footerData = null, navbarData = null, children }) => 
       <html lang="en" />
       <meta name="keywords" content="montreal, javascript, programming, meetup" />
     </Helmet>
-    <Navbar data={navbarData} />
+    <Menubar data={navbarData} />
     <main>{children}</main>
     <Footer data={footerData} />
   </div>

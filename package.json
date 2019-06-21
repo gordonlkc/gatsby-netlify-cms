@@ -4,6 +4,7 @@
   "version": "1.1.3",
   "author": "Robert Cooper",
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "date-fns": "^1.29.0",
     "gatsby": "^2.0.0",
     "gatsby-plugin-favicon": "^3.1.4",
@@ -23,6 +24,7 @@
     "parcel-bundler": "^1.9.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.4.1",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",

@@ -5,7 +5,7 @@ backend:
 media_folder: static/img
 public_folder: /img
 
-display_url: https://gatsby-netlify-cms-example.netlify.com/
+display_url: https://cocky-varahamihira-ca0a52.netlify.com/
 
 collections:
   - name: "meetups"
@@ -236,10 +236,10 @@ collections:
                 ],
             }
   - name: "navbarAndFooter"
-    label: "Navbar & Footer"
+    label: "Menubar & Footer"
     files:
       - file: "src/pages/navbar/index.md"
-        label: "Navbar"
+        label: "Menubar"
         name: "navbar"
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "navbar" }
@@ -252,6 +252,17 @@ collections:
                   { label: "Label", name: "label", widget: "string" },
                   { label: "Link Type", name: "linkType", widget: "select", options: ["internal", "external"] },
                   { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about) if the link is an internal link." },
+                  {
+                    label: Sub Items,
+                    name: subItems,
+                    widget: list,
+                    fields:
+                      [
+                        { label: "Label", name: "label", widget: "string" },
+                        { label: "Link Type", name: "linkType", widget: "select", options: ["internal", "external"] },
+                        { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about) if the link is an internal link." },
+                      ],
+                  }
                 ],
             }
       - file: "src/pages/footer/index.md"

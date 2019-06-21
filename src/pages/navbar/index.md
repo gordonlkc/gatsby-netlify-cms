@@ -10,5 +10,12 @@ menuItems:
   - label: past meetups
     linkType: internal
     linkURL: /meetups
+  - label: 'Yes test'
+    linkType: internal
+    linkURL: /yes
+    testField: test
+    subItems:
+      - label: yes1
+        linkType: internal
+        linkURL: /yes1
 ---
-
