@@ -2,7 +2,7 @@
 templateKey: article
 title: Test
 date: 2019-06-21T05:35:59.857Z
-author: Lam
+author: Gordon
 category: Legal
 thumbnail: /img/teemu-paananen-376238-unsplash.jpg
 ---
