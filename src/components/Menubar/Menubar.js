@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export const MenubarTemplate = ({ data }) => (
-<Navbar collapseOnSelect expand="lg" variant="dark">
+<Navbar collapseOnSelect expand="lg" variant="dark" sticky="top">
   <Navbar.Brand href="/">{data.menuTitle}</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-menubar-nav" />
   <Navbar.Collapse id="responsive-menubar-nav">
