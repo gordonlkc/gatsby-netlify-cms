@@ -1,21 +1,9 @@
 ---
 templateKey: menubar
 menuItems:
-  - label: test
+  - label: Home
     linkType: internal
-    linkURL: /
-  - label: about
-    linkType: internal
-    linkURL: /about
-  - label: past meetups
-    linkType: internal
-    linkURL: /meetups
-  - label: 'Yes'
-    linkType: internal
-    linkURL: /yes
-    subItems:
-      - label: yes1
-        linkType: internal
-        linkURL: /yes1
+    linkURL: /home
+    subItems: []
 ---
 
