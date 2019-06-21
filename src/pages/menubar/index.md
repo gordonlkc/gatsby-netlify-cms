@@ -1,9 +1,10 @@
 ---
 templateKey: menubar
+menuTitle: Dallow Legal
 menuItems:
   - label: HOME
     linkType: internal
-    linkURL: /home
+    linkURL: /
     subItems: []
   - label: PRODUCTS AND SERVICES
     linkType: internal

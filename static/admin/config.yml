@@ -243,6 +243,7 @@ collections:
         name: "menubar"
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "menubar" }
+          - { label: "Menu title", name: "menuTitle", widget: "string", default: "Dallow legal" }
           - {
               label: "Menu Items",
               name: "menuItems",

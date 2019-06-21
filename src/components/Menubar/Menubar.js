@@ -9,16 +9,18 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export const MenubarTemplate = ({ data }) => (
 <Navbar collapseOnSelect expand="lg" variant="dark">
-  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+  <Navbar.Brand href="/">{data.title}</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-menubar-nav" />
   <Navbar.Collapse id="responsive-menubar-nav">
     <Nav className="mr-auto">
       {data.menuItems.map((menuItem) => {
         console.log(menuItem);
         return (
-          (menuItem.subItems) ? 
+          (menuItem.subItems && menuItem.subItems.length>0) ? 
           (<NavDropdown title={menuItem.label} id="collasible-nav-dropdown" key={menuItem.linkURL} href={menuItem.linkURL}>
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            {menuItem.subItems.map((subItem) => {
+              return (<NavDropdown.Item href={subItem.linkURL}> {subItem.label} </NavDropdown.Item>);
+            })}
           </NavDropdown>) :
           (<Nav.Link key={menuItem.linkURL} href={menuItem.linkURL}>{menuItem.label}</Nav.Link>)
         )
@@ -33,7 +35,6 @@ const Menubar = props => {
     return null;
   }
   const data = props.data.edges[0].node.frontmatter;
-  console.log(data);
   return <MenubarTemplate data={data} />;
 };
 
