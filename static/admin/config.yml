@@ -18,7 +18,7 @@ collections:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - {label: "Author", name: "author", widget: "relation", collection: "staffs", searchFields: ["firstName"], valueField: "firstName", displayFields: ["firstName","lastName"], required: true}
+      - {label: "Author", name: "author", widget: "relation", collection: "staffs", searchFields: ["title", "firstName", "lastName"], valueField: "title", displayFields: ["firstName","lastName"], required: true}
       - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["title"], valueField: "title", displayFields: ["title"], required: true}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -38,8 +38,8 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}-{{slug}}"
     identifier_field: lastName
     fields:
-      - { label: Last name, name: lastName, required: true, widget: string }
       - { label: First name, name: firstName, required: true, widget: string }
+      - { label: Last name, name: lastName, required: true, widget: string }
       - {label: Description, name: description, widget: string, required: false}
       - {label: Profile URL, name: profileUrl, widget: string, required: false}
   - name: "pages"
