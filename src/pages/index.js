@@ -129,7 +129,7 @@ export default HomePage;
 export const pageQuery = graphql`
   query HomePageQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { author: { elemMatch: { text: { ne: null } } } } }
+      filter: { frontmatter: { thumbnail: { elemMatch: { image: { ne: null } } } } }
       sort: { order: DESC, fields: frontmatter___date }
     ) {
       edges {
