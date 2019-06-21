@@ -17,6 +17,13 @@ class ArticleTemplate extends Component {
             <span className="article-label">Date:</span> {this.props.article.formattedDate}
           </p>
         </div>
+        {this.props.article.author}
+        <div className="article-description">
+          <span> 
+            {this.props.article.body}
+          </span>
+        </div>
+
       </section>
     );
   }
