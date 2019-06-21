@@ -30,6 +30,7 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}-{{slug}}"
     editor:
       preview: false
+    identifier_field: title
     fields:
       - {label: Title, name: title, widget: string}
       - {label: Description, name: description, widget: string, required: false}
@@ -40,6 +41,7 @@ collections:
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}-{{slug}}"
     editor:
       preview: false
+    identifier_field: firstName
     fields:
       - { label: First name, name: firstName, required: true, widget: string }
       - { label: Last name, name: lastName, required: true, widget: string }
