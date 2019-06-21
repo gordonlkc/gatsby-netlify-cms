@@ -18,16 +18,18 @@ collections:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - {label: "Author", name: "author", widget: "relation", collection: "staffs", searchFields: ["firstName"], valueField: "firstName", displayFields: ["firstName","lastName"], required: true}
-      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["title"], valueField: "title", displayFields: ["title"], required: true}
+      - {label: "Author", name: "author", widget: staffs, collection: "staffs", searchFields: ["firstName", "lastName"], required: true}
+      - {label: "Category", name: "category", widget: categories, collection: "categories", searchFields: ["title"], required: true}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {label: "Tags", name: tags, widget: list, required: false}
       - {label: "Body", name: "body", widget: "markdown"}
   - label: 'Categories'
     name: 'categories'
     folder: "src/pages/categories" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}-{{slug}}"
-    identifier_field: title
+    editor:
+      preview: false
     fields:
       - {label: Title, name: title, widget: string}
       - {label: Description, name: description, widget: string, required: false}
@@ -36,7 +38,8 @@ collections:
     folder: "src/pages/staffs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}-{{slug}}"
-    identifier_field: lastName
+    editor:
+      preview: false
     fields:
       - { label: First name, name: firstName, required: true, widget: string }
       - { label: Last name, name: lastName, required: true, widget: string }

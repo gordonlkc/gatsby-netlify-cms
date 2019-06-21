@@ -94,15 +94,15 @@ class HomePage extends React.Component {
     } = home;
     let latestArticle = null;
     // Find the next article that is closest to today
-    data.allMarkdownRemark.edges.every(item => {
-      const { frontmatter: article } = item.node;
-      if (isAfter(article.rawDate, new Date())) {
-        latestArticle = article;
-        return true;
-      } else {
-        return false;
-      }
-    });
+    // data.allMarkdownRemark.edges.every(item => {
+    //   const { frontmatter: article } = item.node;
+    //   if (isAfter(article.rawDate, new Date())) {
+    //     latestArticle = article;
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // });
     return (
       <Layout footerData={footerData} menubarData={menubarData}>
         <Helmet>
@@ -128,21 +128,21 @@ export default HomePage;
 
 export const pageQuery = graphql`
   query HomePageQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: frontmatter___date }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            formattedDate: date(formatString: "MMMM Do YYYY @ h:mm A")
-            rawDate: date
-            author
-            category
-          }
-        }
-      }
-    }
+    # allMarkdownRemark(
+    #   sort: { order: DESC, fields: frontmatter___date }
+    # ) {
+    #   edges {
+    #     node {
+    #       frontmatter {
+    #         title
+    #         formattedDate: date(formatString: "MMMM Do YYYY @ h:mm A")
+    #         rawDate: date
+    #         author
+    #         category
+    #       }
+    #     }
+    #   }
+    # }
     ...LayoutFragment
     homePageData: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "home-page" } } }) {
       edges {
