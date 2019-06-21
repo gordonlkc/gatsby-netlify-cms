@@ -3,7 +3,7 @@ templateKey: home-page
 headerImage:
   image: /img/annie-spratt-608001-unsplash.jpg
   imageAlt: Legal company
-title: Dallow Legal
+title: Dallow Legal PTY LTD
 latestArticleHeading: Latest Article
 noLatestArticleText: Details to be announced.
 mapsNote: Clicking the pin opens Google Maps in a new tab.
