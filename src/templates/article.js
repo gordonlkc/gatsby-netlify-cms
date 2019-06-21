@@ -16,39 +16,6 @@ class ArticleTemplate extends Component {
           <p className="article-metaField  article-metaField--date">
             <span className="article-label">Date:</span> {this.props.article.formattedDate}
           </p>
-          <p className="article-metaField  article-metaField--location">
-            <span className="article-label">Location:</span> {this.props.article.location.name}
-          </p>
-        </div>
-        <div className="article-presenters">
-          {this.props.article.presenters.map(presenter => (
-            <div className="article-presenter" key={presenter.name}>
-              <div className="article-presenterImageContainer">
-                <img
-                  className="article-presenterImage"
-                  src={presenter.image ? presenter.image : HeadshotPlaceholder}
-                  alt={presenter.image ? presenter.name : "Default headshot placeholder"}
-                />
-                <span className="article-presenterName">{presenter.name}</span>
-              </div>
-              <div className="article-presenterInfo">
-                {presenter.presentationTitle && (
-                  <h3 className="article-presenterTitle">{presenter.presentationTitle}</h3>
-                )}
-                <p className="article-presenterText">{presenter.text}</p>
-                <ul className="article-presenterLinks">
-                  {presenter.links &&
-                    presenter.links.map((link, index) => (
-                      <li key={index} className="article-presenterLinkItem">
-                        <a className="article-presenterLink" href={link.linkURL}>
-                          {link.linkText}
-                        </a>
-                      </li>
-                    ))}
-                </ul>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
     );
@@ -59,7 +26,7 @@ ArticleTemplate.propTypes = {
   article: PropTypes.shape({
     title: PropTypes.string,
     name: PropTypes.string,
-    presenters: PropTypes.array,
+    author: PropTypes.object,
   }),
 };
 

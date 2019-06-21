@@ -161,6 +161,7 @@ export const pageQuery = graphql`
               image
               imageAlt
             }
+            author
             mapsNote
             callToActions {
               firstCTA {

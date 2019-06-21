@@ -17,27 +17,26 @@ collections:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - {
-          label: Author,
-          name: author,
-          required: true,
-          widget: "object",
-          fields:
-            [
-              { label: Name, name: name, required: true, widget: string },
-            ],
-        }
-      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["title"], valueField: "title", displayFields: ["title"], required: false}
+      - {label: "Author", name: "author", widget: "relation", collection: "staffs", searchFields: ["firstName"], valueField: "firstName", displayFields: ["firstName"], required: true}
+      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["title"], valueField: "title", displayFields: ["title"], required: true}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
   - label: 'Categories'
     name: 'categories'
     folder: "src/pages/categories" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    format: 'json'
     fields:
       - {label: Title, name: title, widget: string}
       - {label: Description, name: description, widget: string, required: false}
+  - label: 'Staffs'
+    name: 'staffs'
+    folder: "src/pages/staffs" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields:
+      - { label: Last name, name: lastName, required: true, widget: string }
+      - { label: First lame, name: firstName, required: true, widget: string }
+      - {label: Description, name: description, widget: string, required: false}
+      - {label: Profile URL, name: profileUrl, widget: string, required: false}
   - name: "pages"
     label: "Pages"
     files:
