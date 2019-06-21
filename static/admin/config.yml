@@ -25,6 +25,7 @@ collections:
     name: 'categories'
     folder: "src/pages/categories" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
     fields:
       - {label: Title, name: title, widget: string}
       - {label: Description, name: description, widget: string, required: false}
@@ -32,6 +33,7 @@ collections:
     name: 'staffs'
     folder: "src/pages/staffs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
     fields:
       - { label: Last name, name: lastName, required: true, widget: string }
       - { label: First name, name: firstName, required: true, widget: string }

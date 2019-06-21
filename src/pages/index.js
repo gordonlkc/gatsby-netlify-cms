@@ -128,16 +128,11 @@ export default HomePage;
 
 export const pageQuery = graphql`
   query HomePageQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { thumbnail: { elemMatch: { image: { ne: null } } } } }
-      sort: { order: DESC, fields: frontmatter___date }
-    ) {
+    allMarkdownRemark {
       edges {
         node {
           frontmatter {
             title
-            formattedDate: date(formatString: "MMMM Do YYYY @ h:mm A")
-            rawDate: date
             author {
               name
             }
