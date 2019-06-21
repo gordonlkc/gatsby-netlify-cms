@@ -10,13 +10,13 @@ import { Footer } from "../components/Footer";
 
 
 
-const TemplateWrapper = ({ footerData = null, navbarData = null, children }) => (
+const TemplateWrapper = ({ footerData = null, menubarData = null, children }) => (
   <div>
     <Helmet>
       <html lang="en" />
       <meta name="keywords" content="montreal, javascript, programming, meetup" />
     </Helmet>
-    <Menubar data={navbarData} />
+    <Menubar data={menubarData} />
     <main>{children}</main>
     <Footer data={footerData} />
   </div>
@@ -44,7 +44,7 @@ export const query = graphql`
         }
       }
     }
-    navbarData: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "navbar" } } }) {
+    menubarData: allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "menubar" } } }) {
       edges {
         node {
           id
@@ -57,6 +57,7 @@ export const query = graphql`
               label
               linkType
               linkURL
+              subItems
             }
           }
         }

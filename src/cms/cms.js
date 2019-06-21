@@ -9,7 +9,7 @@ import PastMeetupsPagePreview from "./preview-templates/PastMeetupsPagePreview";
 
 CMS.registerPreviewTemplate("meetups", MeetupPreview);
 CMS.registerPreviewTemplate("footer", FooterPreview);
-CMS.registerPreviewTemplate("navbar", MenubarPreview);
+CMS.registerPreviewTemplate("menubar", MenubarPreview);
 CMS.registerPreviewTemplate("about", AboutPagePreview);
 CMS.registerPreviewTemplate("home", HomePagePreview);
 CMS.registerPreviewTemplate("pastMeetups", PastMeetupsPagePreview);

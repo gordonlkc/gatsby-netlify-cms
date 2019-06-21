@@ -59,7 +59,7 @@ const PastMeetupsPage = ({ data }) => {
   });
 
   return (
-    <Layout footerData={data.footerData} navbarData={data.navbarData}>
+    <Layout footerData={data.footerData} menubarData={data.menubarData}>
       <Helmet>
         <meta name="title" content={seoTitle} />
         <meta name="description" content={seoDescription} />

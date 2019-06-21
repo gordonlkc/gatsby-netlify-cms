@@ -235,14 +235,14 @@ collections:
                   { label: "Description", name: "description", widget: "string" },
                 ],
             }
-  - name: "navbarAndFooter"
+  - name: "menubarAndFooter"
     label: "Menubar & Footer"
     files:
-      - file: "src/pages/navbar/index.md"
+      - file: "src/pages/menubar/index.md"
         label: "Menubar"
-        name: "navbar"
+        name: "menubar"
         fields:
-          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "navbar" }
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "menubar" }
           - {
               label: "Menu Items",
               name: "menuItems",
