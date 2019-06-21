@@ -1,6 +1,6 @@
 # Gatsby & Netlify CMS Example
 
-An example website built using Gatsby V2 and Netlify CMS. The website is a fake JavaScript meetup site that lists upcoming meetups, information about the meetup group, as well as a list of past meetups.
+An example website built using Gatsby V2 and Netlify CMS. The website is a fake JavaScript article site that lists upcoming articles, information about the article group, as well as a list of past articles.
 
 The purpose of the repository is to provide an idea of how a Gatsby project is structured with Netlify CMS. You can easily deploy your own instance of this application by clicking the button below:
 

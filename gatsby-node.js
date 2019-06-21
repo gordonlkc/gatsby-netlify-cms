@@ -28,14 +28,14 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    // Filter out the footer, menubar, and meetups so we don't create pages for those
+    // Filter out the footer, menubar, and articles so we don't create pages for those
     const postOrPage = result.data.allMarkdownRemark.edges.filter(edge => {
       if (edge.node.frontmatter.templateKey === "menubar") {
         return false;
       } else if (edge.node.frontmatter.templateKey === "footer") {
         return false;
       } else {
-        return !Boolean(edge.node.fields.slug.match(/^\/meetups\/.*$/));
+        return !Boolean(edge.node.fields.slug.match(/^\/articles\/.*$/));
       }
     });
 

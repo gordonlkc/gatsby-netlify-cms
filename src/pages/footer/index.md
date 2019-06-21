@@ -3,12 +3,12 @@ templateKey: footer
 logoImage:
   image: /img/js-wakanda.png
   imageAlt: JavaScript Wakanda
-  tagline: Your friendly local Wakanda meetup
+  tagline: Your friendly local Wakanda article
 socialLinks:
-  - image: /img/meetup.svg
-    imageAlt: Join us on meetup.com
-    label: meetup.com
-    linkURL: 'https://www.meetup.com/'
+  - image: /img/article.svg
+    imageAlt: Join us on article.com
+    label: article.com
+    linkURL: 'https://www.article.com/'
   - image: /img/twitter.svg
     imageAlt: Follow us on Twitter
     label: twitter.com

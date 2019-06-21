@@ -14,7 +14,7 @@ const TemplateWrapper = ({ footerData = null, menubarData = null, children }) =>
   <div>
     <Helmet>
       <html lang="en" />
-      <meta name="keywords" content="montreal, javascript, programming, meetup" />
+      <meta name="keywords" content="montreal, javascript, programming, article" />
     </Helmet>
     <Menubar data={menubarData} />
     <main>{children}</main>

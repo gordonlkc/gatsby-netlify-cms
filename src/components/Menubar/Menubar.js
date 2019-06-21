@@ -9,7 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export const MenubarTemplate = ({ data }) => (
 <Navbar collapseOnSelect expand="lg" variant="dark">
-  <Navbar.Brand href="/">{data.title}</Navbar.Brand>
+  <Navbar.Brand href="/">{data.menuTitle}</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-menubar-nav" />
   <Navbar.Collapse id="responsive-menubar-nav">
     <Nav className="mr-auto">

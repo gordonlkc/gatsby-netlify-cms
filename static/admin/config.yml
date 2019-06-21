@@ -8,13 +8,13 @@ public_folder: /img
 display_url: https://cocky-varahamihira-ca0a52.netlify.com/
 
 collections:
-  - name: "meetups"
-    label: "Meetups"
-    description: "Meetup dates, location, and presenter information."
-    folder: "src/pages/meetups"
+  - name: "articles"
+    label: "Articles"
+    description: "Article dates, location, and presenter information."
+    folder: "src/pages/articles"
     create: true
     fields:
-      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "meetup" }
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - {
@@ -97,7 +97,7 @@ collections:
             }
           - { label: "Developer Groups", name: "developerGroups", widget: "markdown" }
           - {
-              label: "Meetup Organizers",
+              label: "Article Organizers",
               name: "organizers",
               widget: "object",
               fields:
@@ -127,15 +127,15 @@ collections:
                   { label: "Description", name: "description", widget: "string" },
                 ],
             }
-      - file: "src/pages/pastMeetups/index.md"
-        label: "Past Meetups"
-        name: "pastMeetups"
+      - file: "src/pages/pastArticles/index.md"
+        label: "Past Articles"
+        name: "pastArticles"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "past-meetups-page",
+              default: "past-articles-page",
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
@@ -166,8 +166,8 @@ collections:
                 ],
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Upcoming Meetup Heading", name: "upcomingMeetupHeading", widget: "string" }
-          - { label: "No Upcoming Meetup Text", name: "noUpcomingMeetupText", hint: "This text will be displayed when there are no upcoming meetups", required: true, widget: "string" }
+          - { label: "Latest Article Heading", name: "latestArticleHeading", widget: "string" }
+          - { label: "No Latest Article Text", name: "noLatestArticleText", hint: "This text will be displayed when there are no upcoming articles", required: true, widget: "string" }
           - { label: "Maps Note", name: "mapsNote", required: true, widget: "string" }
           - {
               label: "Call to Actions",

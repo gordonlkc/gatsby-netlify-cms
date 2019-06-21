@@ -1,24 +1,24 @@
 ---
 templateKey: about-page
-title: Wakanda JavaScript Developer Meetup
+title: Wakanda JavaScript Developer Article
 mainImage:
   image: /img/teemu-paananen-376238-unsplash.jpg
-  imageAlt: Wakanda JavaScript developer presenting at a meetup.
+  imageAlt: Wakanda JavaScript developer presenting at a article.
 gallery:
   - image: /img/neonbrand-509131-unsplash.jpg
-    imageAlt: Wakanda JavaScript developer presenting at a meetup.
+    imageAlt: Wakanda JavaScript developer presenting at a article.
   - image: /img/jakob-dalbjorn-730178-unsplash.jpg
-    imageAlt: Wakanda JavaScript developer presenting at a meetup.
+    imageAlt: Wakanda JavaScript developer presenting at a article.
   - image: /img/annie-spratt-608001-unsplash.jpg
     imageAlt: Wakanda developers working together at a table.
 developerGroups: |-
   ## Other Wakanda Developer Groups
 
-  * [React & React Native Meetup](https://www.google.com)
-  * [Python Meetup](https://www.google.com)
-  * [Google Developer Meetup](https://www.google.com)
-  * [Vue.js Meetup](https://www.google.com)
-  * [Ruby Meetup](https://www.google.com)
+  * [React & React Native Article](https://www.google.com)
+  * [Python Article](https://www.google.com)
+  * [Google Developer Article](https://www.google.com)
+  * [Vue.js Article](https://www.google.com)
+  * [Ruby Article](https://www.google.com)
 organizers:
   title: Group Organizers
   gallery:
@@ -31,7 +31,7 @@ organizers:
 seo:
   browserTitle: About | JavaScript Wakanda
   description: >-
-    JavaScript Wakanda is a meetup group that holds monthly meetups where
+    JavaScript Wakanda is a article group that holds monthly articles where
     JavaScript developers get together for presentations and to meet others in
     the community.
   title: About | JS Wakanda

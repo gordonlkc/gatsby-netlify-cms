@@ -10,10 +10,10 @@ import HeadshotPlaceholder from "../img/headshot-placeholder.svg";
 import CustomLink from "../components/CustomLink";
 import "../styles/home.scss";
 
-export const HomePageTemplate = ({ home, upcomingMeetup = null }) => {
-  const presenters = upcomingMeetup && upcomingMeetup.presenters;
-  const latitude = upcomingMeetup && parseFloat(upcomingMeetup.location.mapsLatitude);
-  const longitude = upcomingMeetup && parseFloat(upcomingMeetup.location.mapsLongitude);
+export const HomePageTemplate = ({ home, latestArticle = null }) => {
+  const presenters = latestArticle && latestArticle.presenters;
+  const latitude = latestArticle && parseFloat(latestArticle.location.mapsLatitude);
+  const longitude = latestArticle && parseFloat(latestArticle.location.mapsLongitude);
   return (
     <>
       <section className="header">
@@ -24,53 +24,53 @@ export const HomePageTemplate = ({ home, upcomingMeetup = null }) => {
           </h3>
         </div>
       </section>
-      <section className="upcomingMeetup  section">
-        <div className="upcomingMeetup-container  container">
-          <h2 className="upcomingMeetup-title">{home.upcomingMeetupHeading}</h2>
-          {upcomingMeetup ? (
+      <section className="latestArticle  section">
+        <div className="latestArticle-container  container">
+          <h2 className="latestArticle-title">{home.latestArticleHeading}</h2>
+          {latestArticle ? (
             <>
-              <p className="upcomingMeetup-detail  upcomingMeetup-detail--date">
-                <span className="upcomingMeetup-detailLabel">Date: </span>
-                {upcomingMeetup.formattedDate}
+              <p className="latestArticle-detail  latestArticle-detail--date">
+                <span className="latestArticle-detailLabel">Date: </span>
+                {latestArticle.formattedDate}
               </p>
-              <p className="upcomingMeetup-detail  upcomingMeetup-detail--location">
-                <span className="upcomingMeetup-detailLabel">Location: </span>
-                {upcomingMeetup.location.name}
+              <p className="latestArticle-detail  latestArticle-detail--location">
+                <span className="latestArticle-detailLabel">Location: </span>
+                {latestArticle.location.name}
               </p>
               {presenters.length > 0 && (
-                <div className="upcomingMeetup-presenters">
+                <div className="latestArticle-presenters">
                   {presenters.map(presenter => (
-                    <div className="upcomingMeetup-presenter" key={presenter.text}>
+                    <div className="latestArticle-presenter" key={presenter.text}>
                       <img
-                        className="upcomingMeetup-presenterImage"
+                        className="latestArticle-presenterImage"
                         src={presenter.image ? presenter.image : HeadshotPlaceholder}
                         alt={presenter.image ? presenter.name : "Default headshot placeholder"}
                       />
-                      <span className="upcomingMeetup-presenterName">{presenter.name}</span>
-                      <span className="upcomingMeetup-presenterPresentationTitle">
+                      <span className="latestArticle-presenterName">{presenter.name}</span>
+                      <span className="latestArticle-presenterPresentationTitle">
                         {presenter.presentationTitle}
                       </span>
-                      <p className="upcomingMeetup-presenterDescription">{presenter.text}</p>
+                      <p className="latestArticle-presenterDescription">{presenter.text}</p>
                     </div>
                   ))}
                 </div>
               )}
-              <p className="upcomingMeetup-mapNote">{home.mapsNote}</p>
-              <div className="upcomingMeetup-mapWrapper">
+              <p className="latestArticle-mapNote">{home.mapsNote}</p>
+              <div className="latestArticle-mapWrapper">
                 <Map
                   isMarkerShown
                   googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTxauB_VWpo0_8hWELlE3pN59uuHzxD-8&v=3.exp&libraries=geometry,drawing,places"
                   loadingElement={<div style={{ height: `100%` }} />}
                   containerElement={<div style={{ height: `100%` }} />}
                   mapElement={<div style={{ height: `100%` }} />}
-                  link={upcomingMeetup.location.mapsLink}
+                  link={latestArticle.location.mapsLink}
                   latitude={latitude}
                   longitude={longitude}
                 />
               </div>
             </>
           ) : (
-            <p className="upcomingMeetup-detail">{home.noUpcomingMeetupText}</p>
+            <p className="latestArticle-detail">{home.noLatestArticleText}</p>
           )}
         </div>
       </section>
@@ -110,12 +110,12 @@ class HomePage extends React.Component {
     const {
       seo: { title: seoTitle, description: seoDescription, browserTitle },
     } = home;
-    let upcomingMeetup = null;
-    // Find the next meetup that is closest to today
+    let latestArticle = null;
+    // Find the next article that is closest to today
     data.allMarkdownRemark.edges.every(item => {
-      const { frontmatter: meetup } = item.node;
-      if (isAfter(meetup.rawDate, new Date())) {
-        upcomingMeetup = meetup;
+      const { frontmatter: article } = item.node;
+      if (isAfter(article.rawDate, new Date())) {
+        latestArticle = article;
         return true;
       } else {
         return false;
@@ -128,7 +128,7 @@ class HomePage extends React.Component {
           <meta name="description" content={seoDescription} />
           <title>{browserTitle}</title>
         </Helmet>
-        <HomePageTemplate home={home} upcomingMeetup={upcomingMeetup} />
+        <HomePageTemplate home={home} latestArticle={latestArticle} />
       </Layout>
     );
   }
@@ -182,8 +182,8 @@ export const pageQuery = graphql`
               image
               imageAlt
             }
-            upcomingMeetupHeading
-            noUpcomingMeetupText
+            latestArticleHeading
+            noLatestArticleText
             mapsNote
             callToActions {
               firstCTA {

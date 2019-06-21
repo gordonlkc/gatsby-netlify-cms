@@ -1,7 +1,7 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-.pastMeetups {
+.pastArticles {
   &-container {
     padding: $section-padding-mobile 20px;
     display: flex;
@@ -32,12 +32,12 @@
     margin: 0 auto 20px;
   }
 
-  &-meetup {
+  &-article {
     margin: 40px 0;
   }
 }
 
-.meetup {
+.article {
   border: 3px solid rgba($highlight, 0.2);
   padding: 10px;
   @include medium-font();
