@@ -1,7 +1,7 @@
 ---
 templateKey: menubar
 menuItems:
-  - label: home
+  - label: test
     linkType: internal
     linkURL: /
   - label: about
