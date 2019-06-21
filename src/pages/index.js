@@ -11,7 +11,7 @@ import CustomLink from "../components/CustomLink";
 import "../styles/home.scss";
 
 export const HomePageTemplate = ({ home, latestArticle = null }) => {
-  const presenters = latestArticle && latestArticle.presenters;
+  const author = latestArticle && latestArticle.author;
   const latitude = latestArticle && parseFloat(latestArticle.location.mapsLatitude);
   const longitude = latestArticle && parseFloat(latestArticle.location.mapsLongitude);
   return (
@@ -37,24 +37,6 @@ export const HomePageTemplate = ({ home, latestArticle = null }) => {
                 <span className="latestArticle-detailLabel">Location: </span>
                 {latestArticle.location.name}
               </p>
-              {presenters.length > 0 && (
-                <div className="latestArticle-presenters">
-                  {presenters.map(presenter => (
-                    <div className="latestArticle-presenter" key={presenter.text}>
-                      <img
-                        className="latestArticle-presenterImage"
-                        src={presenter.image ? presenter.image : HeadshotPlaceholder}
-                        alt={presenter.image ? presenter.name : "Default headshot placeholder"}
-                      />
-                      <span className="latestArticle-presenterName">{presenter.name}</span>
-                      <span className="latestArticle-presenterPresentationTitle">
-                        {presenter.presentationTitle}
-                      </span>
-                      <p className="latestArticle-presenterDescription">{presenter.text}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
               <p className="latestArticle-mapNote">{home.mapsNote}</p>
               <div className="latestArticle-mapWrapper">
                 <Map
@@ -147,7 +129,7 @@ export default HomePage;
 export const pageQuery = graphql`
   query HomePageQuery {
     allMarkdownRemark(
-      filter: { frontmatter: { presenters: { elemMatch: { text: { ne: null } } } } }
+      filter: { frontmatter: { author: { elemMatch: { text: { ne: null } } } } }
       sort: { order: DESC, fields: frontmatter___date }
     ) {
       edges {
@@ -156,18 +138,15 @@ export const pageQuery = graphql`
             title
             formattedDate: date(formatString: "MMMM Do YYYY @ h:mm A")
             rawDate: date
-            presenters {
+            author {
               name
+            }
+            category
+            thumbnail {
               image
-              text
-              presentationTitle
+              imageAlt
             }
-            location {
-              mapsLatitude
-              mapsLongitude
-              mapsLink
-              name
-            }
+            body
           }
         }
       }
@@ -182,8 +161,6 @@ export const pageQuery = graphql`
               image
               imageAlt
             }
-            latestArticleHeading
-            noLatestArticleText
             mapsNote
             callToActions {
               firstCTA {
