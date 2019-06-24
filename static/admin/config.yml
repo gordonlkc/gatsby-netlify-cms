@@ -20,8 +20,8 @@ collections:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - {label: "Author", name: "author", widget: relation, collection: "staffs", searchFields: ["firstName", "lastName"], required: true}
-      - {label: "Category", name: "category", widget: relation, collection: "categories", searchFields: ["title"], required: true}
+      - {label: "Author", name: "author", widget: relation, collection: "staffs", valueField: "firstName", searchFields: ["firstName", "lastName"], required: true}
+      - {label: "Category", name: "category", widget: relation, collection: "categories",  valueField: "title", searchFields: ["title"], required: true}
       - {label: "Cover Image", name: cover, widget: image, required: false}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Headline", name: headline, widget: string, required: false}
